@@ -1,0 +1,31 @@
+body{
+    background-color: #FFF6E9;
+}
+
+
+.gradient-text{
+    background-image: linear-gradient(to right, #405DE6, #833AB4,#FD1D1D, #FCAF45);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+}
+
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 50px 0px 0px 0px;
+}
+
+.subtitle{
+    background-image: linear-gradient(to right, #405DE6, #833AB4,#FD1D1D, #FCAF45);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+
+h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
