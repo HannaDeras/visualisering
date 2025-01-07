@@ -1,3 +1,15 @@
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+fetch('./dataset.csv')
+  .then(response => response.text())
+  .then((text) => {
+    const json = d3.csvParse(text, d3.autoType)
+    console.log(json)
+  })
+
+
+
+
 /* 
 fetch('./dataset.json')
 .then((response) => response.json())
@@ -83,7 +95,7 @@ document.addEventListener('DOMContentLoaded', fetchData);
       .then(data => dataProcessing(data.results)) // Skickar den bearbetade datan till en annan funktion för vidare bearbetning.
       .catch(error => console.error('Error fetching data:', error));  // Om det finns några fel vid hämtningen, loggas dessa i konsolen.
 }
- */
+ 
 
 fetch('./dataset.json')
     .then((response) => response.json())
@@ -137,7 +149,7 @@ new Chart(document.getElementById("myChart"), {
 }
 
 
-
+*/
 
 
 
