@@ -10,6 +10,129 @@ fetch('./dataset.csv')
 
 
 
+
+
+
+
+
+
+
+
+/*
+//Hanna testar
+
+    // Importera D3
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+// Hämta och bearbeta datan
+fetch('./dataset.csv')
+  .then(response => response.text())
+  .then((text) => {
+    const data = d3.csvParse(text, d3.autoType);
+
+    // Välj de kolumner som används i radardiagrammet
+    const factors = [
+      "Color Scheme", "Visual Hierarchy", "Typography", 
+      "Images and Multimedia", "Layout", "Accessibility", "Mobile Responsiveness",
+      "CTA (Call to Action) Buttons",	"Forms and Input Fields",	"Feedback and Error Messages",
+      "Loading Speed","Personalization",	"Animation and Transitions",
+      "Scrolling_Behavior",	"Gestures and Touch Controls",	"Search Functionality",
+      "Social_Media_Integration"
+];
+
+    // Gruppera data efter plattform och beräkna medelvärden
+    const platforms = Array.from(d3.group(data, d => d.Platform).entries());
+    const averages = platforms.map(([platform, group]) => {
+      const avg = {};
+      factors.forEach(factor => {
+        avg[factor] = d3.mean(group, d => d[factor]);
+      });
+      return { platform, ...avg };
+    });
+
+    // Ställ in dimensioner
+    const width = 600, height = 600, margin = 50;
+    const radius = Math.min(width, height) / 2 - margin;
+
+    // Skapa SVG-element
+    const svg = d3.select("body")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", `translate(${width / 2},${height / 2})`);
+
+    // Skapa skalor
+    const angleScale = d3.scalePoint()
+      .domain(factors)
+      .range([0, 2 * Math.PI]);
+
+    const radiusScale = d3.scaleLinear()
+      .domain([0, 5]) // Antag att betygen går från 0 till 5
+      .range([0, radius]);
+
+    // Rita axlar
+    factors.forEach(factor => {
+      const angle = angleScale(factor);
+      const lineCoord = [
+        Math.cos(angle) * radius,
+        Math.sin(angle) * radius
+      ];
+
+      // Axellinjer
+      svg.append("line")
+        .attr("x1", 0)
+        .attr("y1", 0)
+        .attr("x2", lineCoord[0])
+        .attr("y2", lineCoord[1])
+        .attr("stroke", "gray")
+        .attr("stroke-width", 1);
+
+      // Faktorlabels
+      svg.append("text")
+        .attr("x", lineCoord[0] * 1.1)
+        .attr("y", lineCoord[1] * 1.1)
+        .attr("text-anchor", "middle")
+        .text(factor)
+        .style("font-size", "12px");
+    });
+
+    // Rita spindeldiagrammet
+    averages.forEach(({ platform, ...values }) => {
+      const pathData = factors.map(factor => {
+        const angle = angleScale(factor);
+        const valueRadius = radiusScale(values[factor]);
+        return [
+          Math.cos(angle) * valueRadius,
+          Math.sin(angle) * valueRadius
+        ];
+      });
+      pathData.push(pathData[0]); // Stäng polygonen
+
+      svg.append("path")
+        .datum(pathData)
+        .attr("d", d3.line().curve(d3.curveLinearClosed))
+        .attr("fill", "none")
+        .attr("stroke", d3.schemeCategory10[platforms.findIndex(p => p[0] === platform)])
+        .attr("stroke-width", 2);
+    });
+
+    // Lägg till en legend
+    svg.selectAll(".legend")
+      .data(averages.map(d => d.platform))
+      .enter()
+      .append("text")
+      .attr("x", -radius - 20)
+      .attr("y", (_, i) => -radius + i * 20)
+      .text(d => d)
+      .style("font-size", "12px")
+      .attr("fill", (_, i) => d3.schemeCategory10[i]);
+  });
+
+
+ */ 
+
+
 /* 
 fetch('./dataset.json')
 .then((response) => response.json())
