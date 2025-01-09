@@ -2,6 +2,11 @@ body{
     background-color: #FFF6E9;
 }
 
+main{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 
 .gradient-text{
     background-image: linear-gradient(to right, #405DE6, #833AB4,#FD1D1D, #FCAF45);
