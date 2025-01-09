@@ -30,6 +30,11 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+div{
+    width: auto;
+    height: auto;
+}
+
 .section1{
     display: inline-grid;
     column-gap: 40px;
