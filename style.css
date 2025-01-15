@@ -1,5 +1,7 @@
+* {margin:0;}
+
 body{
-    background-color: #FFF6E9;
+    background-color: #fcf6f6;
 }
 
 main{
@@ -23,19 +25,20 @@ h1{
     color: #833AB4;
 }
 
-/*.subtitle{
-    background-image: linear-gradient(to right, #405DE6, #833AB4,#FD1D1D, #FCAF45);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.subtitle{
+    position: absolute;
+    transform: rotate(180deg);
+    left: 58%;
+    color: #fcf6f6;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 1%;
+}
 
-}*/
-
-h2{
+/*h2{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: #833AB4;
-}
+}*/
 
 p{
     font-family: Calibri, 'Trebuchet MS', sans-serif;
@@ -43,23 +46,42 @@ p{
 }
 
 .stand-alone{
-    display: block;
-    width: 50%;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 100%;
+    margin: 0% 5% 10% 5%;
+    display: grid;
+    grid-template-columns: 13% 63%;
+    grid-template-areas: 
+    ". title"
+    ". textblock";
+}
+
+.stand-alone p{
+    grid-area: textblock;
 }
 
 
-.section{
+/* .section{
     margin: 5%;
     margin-bottom: 10%;
     display: grid;
-    grid-template-columns: 50% 40%;
+    grid-template-columns: 50% 30%;
     grid-template-rows: auto;
     grid-template-areas:
     "title title"
     "graph textblock";
     column-gap: 10%;
+} */
+
+.section{
+    margin: 5%;
+    margin-bottom: 10%;
+    display: grid;
+    grid-template-columns: 15% 70%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    ". title"
+    ". graph" 
+    ". textblock";
 }
 
 .titles{
@@ -68,9 +90,9 @@ p{
     font-family: "Poppins", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 24px;
+    /*font-size: 24px;*/
     color: rgb(64, 59, 73);
-    margin-bottom: 0;
+    margin-bottom: 2%;
 }
 
 .chart{
@@ -90,30 +112,41 @@ p{
 
 .text p{
     width: 100%;
-    margin-top: 0;
+    margin-top: 2%;
 }
 
 #section2{
+    margin: 5%;
     display: grid;
-    grid-template-columns: 70%;
+    grid-template-columns: 5% 70%;
     grid-template-areas:
-    "title"
-    "graph"
-    "textblock";
+    ". title"
+    ". graph"
+    ". textblock";
     column-gap: 10%;
 }
 
 #section2 .text p{
     margin-top: 2%;
     margin-bottom: 5%;
-    column-count: 2;
-    column-gap: normal;
+}
+
+
+/*.pattern{
+    opacity: 50%;
+}*/
+
+.pattern2{
+    transform: rotate(180deg);
+   /* opacity:50%;*/
+
+    
 }
 
 
 
 
-.disk{
+/* .disk{
     text-align: left;
     margin-left: 5%;
 
@@ -122,7 +155,10 @@ p{
 .p-text{
     margin-left: 5%;
     margin-right: 30%;
-}
+} */
+
+
+
 
 
 
