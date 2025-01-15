@@ -7,11 +7,6 @@ main{
     margin-right: 10%;
 }
 
-.section{
-    margin: 5%;
-    margin-bottom: 10%
-}
-
 
 /*.gradient-text{
     background-image: linear-gradient(to right, #405DE6, #833AB4,#FD1D1D, #FCAF45);
@@ -47,26 +42,44 @@ p{
     font-size: 18px;
 }
 
+.stand-alone{
+    display: block;
+    width: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
 .section{
+    margin: 5%;
+    margin-bottom: 10%;
     display: grid;
     grid-template-columns: 50% 40%;
+    grid-template-rows: auto;
     grid-template-areas:
+    "title title"
     "graph textblock";
     column-gap: 10%;
 }
 
-#section2{
-    display: grid;
-    grid-template-columns: 60% 30%;
-    grid-template-areas:
-    "graph textblock";
-    column-gap: 10%;
+.titles{
+    grid-area: title;
+    width: 100%;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: rgb(64, 59, 73);
+    margin-bottom: 0;
 }
-
 
 .chart{
     grid-area: graph;
     width: 100%;
+}
+
+.chart p{
+    text-align: end;
 }
 
 .text{
@@ -77,15 +90,39 @@ p{
 
 .text p{
     width: 100%;
-    margin-top: 15%;
+    margin-top: 0;
 }
 
-.intro{
+#section2{
+    display: grid;
+    grid-template-columns: 70%;
+    grid-template-areas:
+    "title"
+    "graph"
+    "textblock";
+    column-gap: 10%;
+}
 
+#section2 .text p{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    column-count: 2;
+    column-gap: normal;
+}
+
+
+
+
+.disk{
+    text-align: left;
     margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 12%;
-    
+
 }
+
+.p-text{
+    margin-left: 5%;
+    margin-right: 30%;
+}
+
 
 
