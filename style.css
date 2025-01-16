@@ -19,10 +19,16 @@ main{
 }*/
 
 h1{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 50px 0px 0px 0px;
-    color: #833AB4;
+    /* text-align: center; */
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 50px 0px 70px 25%;
+    background-image: linear-gradient(to right, #405DE6, #FD1D1D);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 40px;
 }
 
 .subtitle{
@@ -30,7 +36,9 @@ h1{
     transform: rotate(180deg);
     left: 58%;
     color: #fcf6f6;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
     padding-bottom: 1%;
 }
 
@@ -45,6 +53,12 @@ p{
     font-size: 18px;
 }
 
+li{
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin-top: 1%;
+}
+
 .stand-alone{
     width: 100%;
     margin: 0% 5% 10% 5%;
@@ -57,6 +71,32 @@ p{
 
 .stand-alone p{
     grid-area: textblock;
+}
+
+.disc{
+    width: 100%;
+    margin: 0% 5% 10% 5%;
+    display: grid;
+    grid-template-columns: 13% 63%;
+    grid-template-areas: 
+    ". title"
+    ". textblock1"
+    ". list"
+    ". textblock2";
+}
+
+.text1{
+    grid-area: textblock1;
+}
+
+.disc ul{
+    margin-top: 1%;
+    grid-area:list;
+}
+
+.text2{
+    margin-top: 2%;
+    grid-area:textblock2;
 }
 
 
@@ -90,14 +130,29 @@ p{
     font-family: "Poppins", serif;
     font-weight: 400;
     font-style: normal;
+    background-image: linear-gradient(to right, #405DE6, #833AB4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2%;
+}
+
+.chart-titles{
+    grid-area: title;
+    width: 100%;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
     /*font-size: 24px;*/
     color: rgb(64, 59, 73);
-    margin-bottom: 2%;
+    margin-bottom: 10%;
+    
 }
 
 .chart{
     grid-area: graph;
     width: 100%;
+    margin-bottom: 2%;
 }
 
 .chart p{
@@ -121,7 +176,7 @@ p{
     grid-template-columns: 5% 70%;
     grid-template-areas:
     ". title"
-    ". graph"
+    "graph"
     ". textblock";
     column-gap: 10%;
 }
